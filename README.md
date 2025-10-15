@@ -7,4 +7,4 @@ Hello hello
 ## Meine akademische und berufliche Reise
 
 Klicken Sie hier, um meine interaktive Lebenslauf-Karte zu sehen:
-[Zur interaktiven Karte](./academic_journey_map.html)
+[Zur interaktiven Karte](.file:///C:/Users/lschmidt/BIPM2025/academic_journey_map.html)

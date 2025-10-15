@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_4cf74237cce44013ad8745997a6b6908 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_4cf74237cce44013ad8745997a6b6908" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_4cf74237cce44013ad8745997a6b6908 = L.map(
+                "map_4cf74237cce44013ad8745997a6b6908",
+                {
+                    center: [40.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2.3,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_2fa4d2254293b1004814e29b61be4b8f = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "\u00a9 OpenStreetMap contributors \u00a9 CARTO",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_2fa4d2254293b1004814e29b61be4b8f.addTo(map_4cf74237cce44013ad8745997a6b6908);
+        
+    
+            var marker_aae9cad64fe8e6f3e4720e628db0b64c = L.marker(
+                [52.52, 13.405],
+                {
+}
+            ).addTo(map_4cf74237cce44013ad8745997a6b6908);
+        
+    
+            var icon_cbf6e91ff65d8a35aaebcea7d0ac69ce = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_94f1cd71189c77086d9c029bc8742557 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_538dc99e7f0ac014c07d9d06b0ef7339 = $(`<div id="html_538dc99e7f0ac014c07d9d06b0ef7339" style="width: 100.0%; height: 100.0%;">B.Sc. Wirtschaftsinformatik (2021-2025) 🎓</div>`)[0];
+                popup_94f1cd71189c77086d9c029bc8742557.setContent(html_538dc99e7f0ac014c07d9d06b0ef7339);
+            
+        
+
+        marker_aae9cad64fe8e6f3e4720e628db0b64c.bindPopup(popup_94f1cd71189c77086d9c029bc8742557)
+        ;
+
+        
+    
+    
+            marker_aae9cad64fe8e6f3e4720e628db0b64c.bindTooltip(
+                `<div>
+                     Berlin, Germany
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_aae9cad64fe8e6f3e4720e628db0b64c.setIcon(icon_cbf6e91ff65d8a35aaebcea7d0ac69ce);
+            
+    
+            var marker_a57c59a3f217569b6b44deb176b4cca9 = L.marker(
+                [52.52, 13.405],
+                {
+}
+            ).addTo(map_4cf74237cce44013ad8745997a6b6908);
+        
+    
+            var icon_b6206c6163c72d512f46667b237e31cc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0669cb184db15c0d9ceb483ea092c7fa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6c75ed07e6cb0793a5cab2fa2b13941f = $(`<div id="html_6c75ed07e6cb0793a5cab2fa2b13941f" style="width: 100.0%; height: 100.0%;">Werkstudent cimt ag (2024-Jetzt) 💼</div>`)[0];
+                popup_0669cb184db15c0d9ceb483ea092c7fa.setContent(html_6c75ed07e6cb0793a5cab2fa2b13941f);
+            
+        
+
+        marker_a57c59a3f217569b6b44deb176b4cca9.bindPopup(popup_0669cb184db15c0d9ceb483ea092c7fa)
+        ;
+
+        
+    
+    
+            marker_a57c59a3f217569b6b44deb176b4cca9.bindTooltip(
+                `<div>
+                     Berlin, Germany
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a57c59a3f217569b6b44deb176b4cca9.setIcon(icon_b6206c6163c72d512f46667b237e31cc);
+            
+    
+            var marker_5cdf5419260b3a030040b9b169b416f7 = L.marker(
+                [52.52, 13.405],
+                {
+}
+            ).addTo(map_4cf74237cce44013ad8745997a6b6908);
+        
+    
+            var icon_9d7c5ccc69e9dc5e11246d89f6bc0b11 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_975e55abc0a10c3b160440f4232653d5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_14c2b659360abcae89a504d0d78aeedf = $(`<div id="html_14c2b659360abcae89a504d0d78aeedf" style="width: 100.0%; height: 100.0%;">M.Sc. Business Intelligence & Process Management (2025-Jetzt) 🎓</div>`)[0];
+                popup_975e55abc0a10c3b160440f4232653d5.setContent(html_14c2b659360abcae89a504d0d78aeedf);
+            
+        
+
+        marker_5cdf5419260b3a030040b9b169b416f7.bindPopup(popup_975e55abc0a10c3b160440f4232653d5)
+        ;
+
+        
+    
+    
+            marker_5cdf5419260b3a030040b9b169b416f7.bindTooltip(
+                `<div>
+                     Berlin, Germany
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5cdf5419260b3a030040b9b169b416f7.setIcon(icon_9d7c5ccc69e9dc5e11246d89f6bc0b11);
+            
+    
+            var poly_line_91aab29d03f5a9c774471f30c0331640 = L.polyline(
+                [[52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405]],
+                {"bubblingMouseEvents": true, "color": "darkblue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_4cf74237cce44013ad8745997a6b6908);
+        
+    
+            var poly_line_6d167c01c83edd2fbc3bbf67234b49b6 = L.polyline(
+                [[52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405], [52.52, 13.405]],
+                {"bubblingMouseEvents": true, "color": "darkblue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_4cf74237cce44013ad8745997a6b6908);
+        
+</script>
+</html>

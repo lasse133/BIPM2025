@@ -8,3 +8,5 @@ Hello hello
 
 Klicken Sie hier, um meine interaktive Lebenslauf-Karte zu sehen:
 [Zur interaktiven Karte](https://lasse133.github.io/BIPM2025/academic_journey_map.html)
+
+https://lasse133.github.io/BIPM2025/academic_journey_map.html

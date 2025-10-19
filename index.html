@@ -1,20 +1,284 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coole Landing Page - Dein Projekt</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%236B46C1' d='M12 2L1 21h22L12 2zm0 4.09L18.91 19H5.09L12 6.09z'/%3E%3C/svg%3E" type="image/svg+xml">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lasse – About Me</title>
+  <meta name="description" content="Hi, I'm Lasse. I like the gym, biking, gaming (PS5 & Switch), and cooking. Here's a short intro and my academic journey map." />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Lasse – About Me" />
+  <meta property="og:description" content="Gym, biking, gaming on PS5 & Switch, cooking—and my academic journey map." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lasse133.github.io/BIPM2025/" />
+  <meta property="og:image" content="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'><rect width='100%25' height='100%25' fill='%236B46C1'/><text x='50%25' y='52%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='64' fill='white'>Lasse — About Me</text></svg>" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%236B46C1' d='M12 2L1 21h22L12 2zm0 4.09L18.91 19H5.09L12 6.09z'/%3E%3C/svg%3E" type="image/svg+xml">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles (single file) -->
+  <style>
+    :root {
+      --bg: #0b0b10;
+      --card: #12121a;
+      --muted: #9aa3b2;
+      --text: #e8e9ee;
+      --brand: #6B46C1;
+      --brand-2: #8b5cf6;
+      --ring: rgba(139, 92, 246, 0.35);
+    }
+    * { box-sizing: border-box }
+    html, body { margin: 0; }
+    body {
+      font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+      color: var(--text);
+      background: radial-gradient(1200px 800px at 80% -20%, rgba(139,92,246,.15), transparent 60%),
+                  radial-gradient(900px 700px at -10% 10%, rgba(107,70,193,.20), transparent 60%),
+                  var(--bg);
+      line-height: 1.6;
+    }
+    a { color: var(--brand-2); text-decoration: none }
+    a:hover { text-decoration: underline }
+    .container { width: min(1100px, 92vw); margin: 0 auto; }
+
+    header {
+      padding: 2.5rem 0 1.25rem;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    }
+    .logo {
+      display: inline-flex; align-items: center; gap: .75rem; font-weight: 700; letter-spacing: .2px;
+    }
+    .logo svg { width: 28px; height: 28px; }
+    nav a { margin-left: 1rem; font-weight: 600; color: var(--text); opacity: .85 }
+    nav a:hover { opacity: 1 }
+
+    .hero {
+      display: grid; grid-template-columns: 1.2fr .8fr; gap: 2rem; align-items: center;
+      padding: 1rem 0 2rem;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 4vw + .5rem, 3.25rem);
+      line-height: 1.15; margin: .25rem 0 1rem;
+    }
+    .hero p.lead { color: var(--muted); font-size: 1.05rem; }
+    .hero .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 18px; padding: 1rem;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    .tag {
+      display: inline-block; padding: .35rem .6rem; font-size: .8rem; border-radius: 9999px;
+      background: rgba(139,92,246,.12); border: 1px solid rgba(139,92,246,.35); color: #d8ccff;
+    }
+
+    section { padding: 2.25rem 0; }
+    h2 { font-size: clamp(1.25rem, 2vw + .5rem, 1.8rem); margin: 0 0 1rem; }
+
+    .grid {
+      display: grid; gap: 1rem;
+      grid-template-columns: repeat(12, 1fr);
+    }
+    .col-6 { grid-column: span 6 }
+    .col-4 { grid-column: span 4 }
+    .col-12 { grid-column: span 12 }
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .col-6, .col-4 { grid-column: span 12 }
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px; padding: 1.1rem 1.1rem;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .panel:hover {
+      transform: translateY(-2px);
+      border-color: rgba(139,92,246,.45);
+      box-shadow: 0 12px 28px rgba(0,0,0,.35), 0 0 0 6px var(--ring);
+    }
+
+    .hobby {
+      display: flex; gap: .85rem; align-items: flex-start;
+    }
+    .hobby span.icon {
+      display: inline-grid; place-items: center;
+      width: 38px; height: 38px; border-radius: 10px;
+      background: rgba(139,92,246,.14);
+      border: 1px solid rgba(139,92,246,.4);
+      flex: 0 0 38px;
+    }
+    .muted { color: var(--muted) }
+
+    .contact li { margin: .35rem 0 }
+    .footer {
+      color: var(--muted);
+      border-top: 1px dashed rgba(255,255,255,.12);
+      padding: 1.25rem 0 3rem; margin-top: .75rem; font-size: .95rem;
+    }
+
+    /* Focus styles for accessibility */
+    :where(a, button, .panel):focus-visible {
+      outline: none; box-shadow: 0 0 0 6px var(--ring);
+      border-color: rgba(139,92,246,.55);
+    }
+  </style>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Lasse",
+    "url": "https://lasse133.github.io/BIPM2025/",
+    "knowsAbout": ["Gym","Biking","Gaming (PS5 & Switch)","Cooking"],
+    "sameAs": [
+      "https://github.com/REPLACE_WITH_YOUR_GITHUB",
+      "https://www.linkedin.com/in/REPLACE_WITH_YOUR_LINKEDIN"
+    ]
+  }
+  </script>
 </head>
 <body>
-  <iframe src="https://lasse133.github.io/BIPM2025/academic_journey_map.html"
-        width="100%"
-        height="600px"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy">
-</iframe>
+  <a class="skip" href="#main" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
+
+  <header class="container">
+    <div class="logo" aria-label="Site logo">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 2L1 21h22L12 2zm0 4.09L18.91 19H5.09L12 6.09z" fill="currentColor"/>
+      </svg>
+      <span>Lasse</span>
+    </div>
+    <nav aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#hobbies">Hobbies</a>
+      <a href="#journey">Journey Map</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main" class="container">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <span class="tag">Hello!</span>
+        <h1 id="hero-title">I’m Lasse — welcome to my page.</h1>
+        <p class="lead">
+          I’m into <strong>the gym</strong>, <strong>biking</strong>, <strong>gaming</strong> (PS5 & Switch), and <strong>cooking</strong>.
+          Scroll down for a quick intro, my hobbies, and an interactive map of my academic journey.
+        </p>
+      </div>
+      <div class="card panel" role="img" aria-label="Abstract card">
+        <div class="muted" style="font-size:.95rem">
+          “Small, consistent steps beat rare, perfect ones.”
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" aria-labelledby="about-title">
+      <h2 id="about-title">About Me</h2>
+      <div class="grid">
+        <article class="panel col-6">
+          <p>
+            I enjoy building routines that balance physical activity, curiosity, and fun.
+            Whether I’m pushing a new PR at the gym, exploring a bike route, trying a recipe,
+            or clearing a game backlog, I like steady progress and learning by doing.
+          </p>
+        </article>
+        <aside class="panel col-6">
+          <p class="muted">
+            Fun fact: I usually plan my week around workouts and cooking sessions.
+            Games are my way to relax—especially story-driven titles on PS5 and
+            cozy indies on the Switch.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Hobbies -->
+    <section id="hobbies" aria-labelledby="hobbies-title">
+      <h2 id="hobbies-title">Hobbies</h2>
+      <div class="grid">
+        <div class="panel col-6 hobby">
+          <span class="icon" aria-hidden="true">🏋️</span>
+          <div>
+            <h3 style="margin:.1rem 0 .35rem">Gym</h3>
+            <p class="muted">Strength training and consistency. I track my lifts and focus on good form and recovery.</p>
+          </div>
+        </div>
+
+        <div class="panel col-6 hobby">
+          <span class="icon" aria-hidden="true">🚴</span>
+          <div>
+            <h3 style="margin:.1rem 0 .35rem">Biking</h3>
+            <p class="muted">Road and trail rides around town. I like smooth routes with a little climb for a challenge.</p>
+          </div>
+        </div>
+
+        <div class="panel col-6 hobby">
+          <span class="icon" aria-hidden="true">🎮</span>
+          <div>
+            <h3 style="margin:.1rem 0 .35rem">Gaming (PS5 & Switch)</h3>
+            <p class="muted">On PS5, I enjoy story adventures; on Switch, I play co-op and indie games. Always open to recommendations.</p>
+          </div>
+        </div>
+
+        <div class="panel col-6 hobby">
+          <span class="icon" aria-hidden="true">🍳</span>
+          <div>
+            <h3 style="margin:.1rem 0 .35rem">Cooking</h3>
+            <p class="muted">From quick bowls to weekend experiments. I like testing spices and learning better techniques.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Journey Map (your existing iframe) -->
+    <section id="journey" aria-labelledby="journey-title">
+      <h2 id="journey-title">Academic Journey Map</h2>
+      <div class="panel">
+        <iframe
+          src="https://lasse133.github.io/BIPM2025/academic_journey_map.html"
+          width="100%" height="600" style="border:0;border-radius:12px"
+          allowfullscreen loading="lazy"
+          title="Interactive academic journey map">
+        </iframe>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact & Links</h2>
+      <div class="grid">
+        <div class="panel col-12">
+          <ul class="contact" style="list-style:none; padding:0; margin:0">
+            <li>📧 Email: <a href="mailto:REPLACE_YOUR_EMAIL@example.com">REPLACE_YOUR_EMAIL@example.com</a></li>
+            <li>🐙 GitHub: <a href="https://github.com/REPLACE_WITH_YOUR_GITHUB">github.com/REPLACE_WITH_YOUR_GITHUB</a></li>
+            <li>🔗 LinkedIn: <a href="https://www.linkedin.com/in/REPLACE_WITH_YOUR_LINKEDIN">linkedin.com/in/REPLACE_WITH_YOUR_LINKEDIN</a></li>
+            <li>🎮 PSN / Switch: <span class="muted">Optional — add your gamer tags here</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <div class="container" style="padding:0">
+        <span>© <span id="y"></span> Lasse</span> ·
+        <span class="muted">Built with semantic HTML and a tiny bit of CSS.</span>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Current year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
